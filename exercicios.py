@@ -95,11 +95,13 @@ print(f'A conversao de {temperatura_c} para F resulta em {fahrenheit}')
 
 # %%
 
+import math
+
 #Escreva um programa que calcule a área de um círculo, recebendo o raio como entrada.
 
 raio = float(input('Adicione o raio: '))
 
-circulo_area = 3.14 * (raio**2)
+circulo_area = math.pi * (raio**2)
 
 print(f'O raio de {raio} resulta em {circulo_area}')
 
@@ -111,8 +113,12 @@ print(f'O raio de {raio} resulta em {circulo_area}')
 
 # Escreva um programa que receba uma string do usuário e a converta para maiúsculas.
 
-string = input("Adicione a string a ser transformada")
+input_string = input("Adicione a string a ser transformada")
 
-string_maiuscula = 
+string_maiuscula = input_string.upper()
+
+print(string_maiuscula)
 
 
+
+# %%
