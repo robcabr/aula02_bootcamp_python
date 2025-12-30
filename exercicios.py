@@ -53,11 +53,11 @@ print(f'A divisao inteira de {primeiro_divisao} por {segundo_divisao} = {divisao
 
 # 5 - -Escreva um programa que calcule o quadrado de um número fornecido pelo usuário.
 
-numero_quadrado = int(input("Insira o valor a ser elevado ao quadrado: "))
+num = int(input("Insira o valor a ser elevado ao quadrado: "))
 
-quadrado = numero_quadrado **2
+quadrado = num **2
 
-print(f"{numero_quadrado} elevado ao quadrado é {quadrado}")
+print(f"{num} elevado ao quadrado é {quadrado}")
 
 ####################################
 # Float
@@ -71,7 +71,7 @@ segundo_float = float(input('Segundo numero a ser adicionado: '))
 
 soma_float = primeiro_float + segundo_float
 
-print(f'A soma de {primeiro_float} com {segundo_float} resulta em {soma_float}')
+print(f'A soma de {primeiro_float} + {segundo_float} resulta em {soma_float}')
 # %%
 
 # 7 - Crie um programa que calcule a média de dois números flutuantes fornecidos pelo usuário.
@@ -104,7 +104,7 @@ temperatura_c = float(input('Temperatura em Celsius: '))
 
 fahrenheit = (temperatura_c * 1.8) + 32
 
-print(f'A conversao de {temperatura_c} para F resulta em {fahrenheit}')
+print(f'A conversao de {temperatura_c} para Fahrenheit resulta em {fahrenheit}')
 
 # %%
 
@@ -114,7 +114,7 @@ raio = float(input('Adicione o raio: '))
 
 circulo_area = math.pi * (raio**2)
 
-print(f'O raio de {raio} resulta em {circulo_area:.2f}')
+print(f'O raio de {raio} resulta em uma área e circulo de: {circulo_area:.2f}')
 
 ####################################
 # String
@@ -127,7 +127,7 @@ input_string = input("Adicione a string a ser transformada")
 
 string_maiuscula = input_string.upper()
 
-print(string_maiuscula)
+print(f'Texto em maiusculo: {string_maiuscula}')
 
 
 # %%
@@ -138,7 +138,7 @@ nome_completo = input("Insira o seu nome completo: ")
 
 nome_minusculo = nome_completo.lower()
 
-print(nome_minusculo)
+print(f'Nome em minusculo: {nome_minusculo}')
 
 # %%
 
@@ -148,7 +148,7 @@ frase_completa = input("Insira uma frase completa: ")
 
 frase_corrigida = frase_completa.strip()
 
-print(frase_corrigida)
+print(f'Frase completa sem espaço: {frase_corrigida}')
 
 # %%
 
@@ -160,9 +160,9 @@ data_input = input("Digite uma data no formato DD/MM/AAAA: ")
 
 #print(f"{data_input}: Dia - {data_corrigida[0]}; Mes - {data_corrigida[1]}; Ano - {data_corrigida[2]}")
 
-data_date_format = datetime.strptime(data_input, "%d/%m/%Y")
+data_datetime_format = datetime.strptime(data_input, "%d/%m/%Y")
 
-print(f"A {data_input}, ppssui os seguintes elementos: Dia - {data_date_format.day}; Mes - {data_date_format.month}; Ano - {data_date_format.year}")
+print(f"A {data_input}, ppssui os seguintes elementos: Dia - {data_datetime_format.day}; Mes - {data_datetime_format.month}; Ano - {data_datetime_format.year}")
 
 # %%
 
@@ -172,7 +172,9 @@ primeira_string = input("Forneca uma frase: ")
 
 segunda_string = input("Forneca uma frase: ") 
 
-print(primeira_string + " " + segunda_string)
+string_concatenado = primeira_string + " " + segunda_string
+
+print(f'Texto concatenado = {string_concatenado}')
 
 # #### Booleanos 
 
@@ -186,7 +188,7 @@ expressao_2 = input("Adicione outra expressão booleana: True or False").lower()
 
 resultado_and = expressao_1 and expressao_2
 
-print(resultado_and)
+print(f'Resultado and logico: {resultado_and}')
 
 #%%
 # 17. Crie um programa que receba dois valores booleanos do usuário e retorne o resultado da operação OR.
@@ -197,7 +199,8 @@ expressao_1 = input("Adicione uma expressão booleana: True or False").lower() =
 expressao_2 = input("Adicione outra expressão booleana: True or False").lower() == "true"
 
 resultado_or = expressao_1 or expressao_2
-print(resultado_or)
+
+print(f'Resultado or logico: {resultado_or}')
 
 #%%
 # 18. Desenvolva um programa que peça ao usuário para inserir um valor booleano e, em seguida, inverta esse valor.
@@ -206,7 +209,7 @@ expressao_bool = input("Adicione uma expressão booleana: True or False").lower(
 
 expressao_invertida = not(expressao_bool)
 
-print(expressao_bool, expressao_invertida)
+print(f'Resultado not logico: {expressao_invertida}')
 
 
 #%%
@@ -232,29 +235,86 @@ print(f' O valor de {valor_1} é diferente de {valor_2}? {valor_1 != valor_2}')
 
 # 21: Conversor de Temperatura
 
+# Escreva um programa que converta a temperatura de Celsius para Fahrenheit. O programa deve solicitar ao usuário a temperatura em Celsius e, utilizando `try-except`, garantir que a entrada seja numérica, tratando qualquer `ValueError`. Imprima o resultado em Fahrenheit ou uma mensagem de erro se a entrada não for válida.
+
+try:
+  temperatura = float(input("Qual a temperatura a ser convertida? "))
+  temperatura_convertida = (temperatura * 9/5) + 32
+  print(f"A conversão de {temperatura} Celsius resulta em {temperatura_convertida:.2f} Fahrenheit ")
+except ValueError:
+  print("Valor inserido invalido. Insira um valor numérico. ")
 
 
 
 #%%
 # 22: Verificador de Palíndromo
 
-
-
+frase = input("Por favor adicione uma frase: ")
+if isinstance(frase, str):
+  frase_formatada = frase.replace(" ", "").lower()
+  if frase_formatada == frase_formatada[::-1]:
+    print("As duas frases são identicas. Palindromo detectado.")
+  else:
+    print("As duas frases são diferentes.")
+else:
+  print("Entrada Incorreta. Digite uma palavra ou frase válida.")
 
 #%%
 # 23: Calculadora Simples
 
-
+try:
+  valor_1 = float(input("Adicione um valor numérico"))
+  valor_2 = float(input("Adicione outro valor numérico"))
+  operacao = input("Qual operação gostaria de realizar? +, -, / ou *? Selecione apenas uma.").lower()
+  if operacao == '+':
+    resultado = valor_1 + valor_2
+  elif operacao == '-':
+    resultado = valor_1 - valor_2
+  elif operacao == '/':
+    resultado = valor_1/valor_2
+  elif operacao == '*':
+    resultado = valor_1 * valor_2
+  else: 
+    print("Operação não reconhecida. Escolha uma das opções.")
+  print(f"O resultado de {valor_1} {operacao} {valor_2} resultou em = {resultado}")
+except ZeroDivisionError:
+  print("Divisão por Zero. Por favor selecione outro valor.")
+except ValueError:
+  print("Valor não numérico. Insira um valor válido.")
 
 
 
 #%%
 # 24: Classificador de Números
 
+# Escreva um programa que solicite ao usuário para digitar um número. Utilize `try-except` para assegurar que a entrada seja numérica e utilize `if-elif-else` para classificar o número como "positivo", "negativo" ou "zero". Adicionalmente, identifique se o número é "par" ou "ímpar".
 
+try:
+  numero = int(input("Adicione o valor a ser verificado: "))
+  if numero < 0:
+    print("O valor é negativo")
+  elif numero > 0:
+    print("O valor é posítivo")
+  else:
+    print("O valor é exatamente zero.")
+  if numero % 2 == 0:
+    print("Par")
+  else:
+    print("ímpar")
+except ValueError:
+  print("Adicione um valor numérico inteiro.")
 
 #%%
 # 25: Conversão de Tipo com Validação
 
+# Crie um script que solicite ao usuário uma lista de números separados por vírgula. O programa deve converter a string de entrada em uma lista de números inteiros. Utilize `try-except` para tratar a conversão de cada número e validar que cada elemento da lista convertida é um inteiro. Se a conversão falhar ou um elemento não for um inteiro, imprima uma mensagem de erro. Se a conversão for bem-sucedida para todos os elementos, imprima a lista de inteiros.
 
+lista_usuario = input("Adicione uma lista de numeros separados por virgula")
 
+try:
+  lista_int = [int(valor.strip()) for valor in lista_usuario.split(sep=",")]
+  print(f"Lista de Inteiros Convertida: {lista_int}")
+except ValueError:
+  print("Valor invalido inserido. Certifique-se de inserir apenas numeros inteiros.")
+
+# %%
